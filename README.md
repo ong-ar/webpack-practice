@@ -46,7 +46,7 @@ $ yarn add @babel/core @babel/cli @babel/preset-env --dev
 트랜스파일링된 결과물이 저장될 폴더를 지정한다. (--out-dir 옵션의 축약형)
 ```
 
-`src/js` 파일 생성 후 es6 문법의 코드를 작성
+`src/js/**` 파일 생성 후 es6 문법의 코드를 작성
 
 ```
 $ yarn run build
