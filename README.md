@@ -69,3 +69,15 @@ var _ref = [1, 2, 3],
   a = _ref[0],
   b = _ref[2];
 ```
+
+## webpack
+
+Webpack은 의존 관계에 있는 모듈들을 하나의 자바스크립트 파일로 번들링하는 모듈 번들러이다.
+
+### 사용하기
+
+#### 패키지 설치
+
+```bash
+$ yarn add webpack webpack-cli --dev
+```
