@@ -80,4 +80,9 @@ Webpack은 의존 관계에 있는 모듈들을 하나의 자바스크립트 파
 
 ```bash
 $ yarn add webpack webpack-cli --dev
+$ yarn add babel-loader --dev
 ```
+
+webpack 이 모듈을 번들링 할 때 es6+ 에서 es5 로 트랜스파일링하기 위해선 `babel-loader` 패키지를 설치한다.
+
+#### 설정
