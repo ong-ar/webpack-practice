@@ -2,7 +2,7 @@ const path = require("path");
 
 module.exports = {
   // 번들링 할 최상위 js
-  entry: "./src/js/entry.js",
+  entry: ["./src/js/entry.js", "./src/sass/main.scss"],
   // 번들링 결과가 저장 될 위치와 파일 이름
   output: {
     path: path.resolve(__dirname, "dist/js"),
@@ -20,6 +20,16 @@ module.exports = {
             presets: ["@babel/preset-env"]
           }
         }
+      },
+      {
+        test: /\.scss$/,
+        include: [path.resolve(__dirname, "src/sass")],
+        exclude: /node_modules/,
+        use: [
+          "style-loader", // creates style nodes from JS strings
+          "css-loader", // translates CSS into CommonJS
+          "sass-loader" // compiles Sass to CSS, using Node Sass by default
+        ]
       }
     ]
   },

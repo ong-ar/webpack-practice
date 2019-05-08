@@ -131,3 +131,38 @@ module.exports = {
 ```
 
 `package.json` 에 scripts 추가
+
+## sass
+
+### 사용하기
+
+#### 패키지 설치
+
+```bash
+$ yarn add style-loader css-loader sass-loader node-sass --dev
+```
+
+DOM 에 적용하기 위해선 `style-loader`, `css-loader` 가 필요합니다.
+
+#### 설정
+
+```
+entry: ["./src/js/entry.js", "./src/sass/main.scss"],
+
+...
+
+rules: [{
+    test: /\.scss$/,
+    include: [path.resolve(__dirname, "src/sass")],
+    exclude: /node_modules/
+    use: [
+        "style-loader", // creates style nodes from JS strings
+        "css-loader", // translates CSS into CommonJS
+        "sass-loader" // compiles Sass to CSS, using Node Sass by default
+    ]
+}]
+```
+
+`webpack.config.js` 룰에 추가
+
+참고: https://github.com/webpack-contrib/sass-loader
