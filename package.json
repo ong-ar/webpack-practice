@@ -15,6 +15,6 @@
     "webpack-cli": "^3.3.2"
   },
   "scripts": {
-    "build": "babel src/js -w -d dist/js"
+    "build": "webpack -w"
   }
 }

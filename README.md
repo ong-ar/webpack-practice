@@ -86,3 +86,45 @@ $ yarn add babel-loader --dev
 webpack 이 모듈을 번들링 할 때 es6+ 에서 es5 로 트랜스파일링하기 위해선 `babel-loader` 패키지를 설치한다.
 
 #### 설정
+
+`webpack.config.js` 파일을 생성
+
+```javascript
+const path = require("path");
+
+module.exports = {
+  // 번들링 할 최상위 js
+  entry: "./src/js/entry.js",
+  // 번들링 결과가 저장 될 위치와 파일 이름
+  output: {
+    path: path.resolve(__dirname, "dist/js"),
+    filename: "bundle.js"
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        include: [path.resolve(__dirname, "src/js")],
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env"]
+          }
+        }
+      }
+    ]
+  },
+  devtool: "source-map",
+  // https://webpack.js.org/concepts/mode/#mode-development
+  mode: "development"
+};
+```
+
+```
+"scripts": {
+    "build": "webpack -w"
+}
+```
+
+`package.json` 에 scripts 추가
