@@ -1,0 +1,17 @@
+{
+  "name": "webpack-practice",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "repository": "https://github.com/ong-ar/webpack-practice.git",
+  "author": "ong-ar <reclusis@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4"
+  },
+  "scripts": {
+    "build": "babel src/js -w -d dist/js"
+  }
+}
